@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/Infinix-X663
+DEVICE_PATH := device/infinix/Infinix_X663
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -13,13 +13,13 @@ ALLOW_MISSING_DEPENDENCIES := true
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-    product \
-    system_ext \
-    vendor \
-    vbmeta_system \
-    vbmeta_vendor \
-    boot \
-    system
+	system \
+	product \
+	system_ext \
+	vendor \
+	vbmeta_system \
+	vbmeta_vendor \
+	boot
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
@@ -107,8 +107,31 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
-TW_EXTRA_LANGUAGES := true
+TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
+
+# Full encryption support
+TW_INCLUDE_CRYPTO := true
+TW_INCLUDE_CRYPTO_FBE := true
+TW_INCLUDE_FBE_METADATA_DECRYPT := true
+TW_PREPARE_DATA_MEDIA_EARLY := true
+
+# FastbootD support  
+TW_SUPPORT_INPUT_1_2_HAPTICS := true
+
+# Filesystem support
+TW_INCLUDE_NTFS_3G := true
+TW_INCLUDE_FUSE_EXFAT := true
+TW_INCLUDE_FUSE_NTFS := true
+
+# Additional features
+TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_LIBRESETPROP := true
+
+# Proper compression (gzip)
+BOARD_RAMDISK_COMPRESSOR := gzip
+BOARD_RAMDISK_COMPRESSOR_ARGS := -9
