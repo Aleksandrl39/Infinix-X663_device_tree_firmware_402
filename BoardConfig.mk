@@ -121,17 +121,3 @@ TW_PREPARE_DATA_MEDIA_EARLY := true
 
 # FastbootD support  
 TW_SUPPORT_INPUT_1_2_HAPTICS := true
-
-# Filesystem support
-TW_INCLUDE_NTFS_3G := true
-TW_INCLUDE_FUSE_EXFAT := true
-TW_INCLUDE_FUSE_NTFS := true
-
-# Additional features
-TW_INCLUDE_RESETPROP := true
-TW_INCLUDE_REPACKTOOLS := true
-TW_INCLUDE_LIBRESETPROP := true
-
-# Proper compression (gzip)
-BOARD_RAMDISK_COMPRESSOR := gzip
-BOARD_RAMDISK_COMPRESSOR_ARGS := -9
