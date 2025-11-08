@@ -116,11 +116,6 @@ TW_INCLUDE_REPACKTOOLS := true
 # Full encryption support
 TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
-TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_USE_FSCRYPT_POLICY := v2
-
-# FastbootD support  
-TW_SUPPORT_INPUT_1_2_HAPTICS := true
 
 # Proper compression (gzip)
 BOARD_RAMDISK_COMPRESSOR := gzip
