@@ -111,14 +111,17 @@ TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
-TW_INCLUDE_REPACKTOOLS := true 
+TW_INCLUDE_REPACKTOOLS := true
+TW_INCLUDE_RESETPROP := true
+TW_EXCLUDE_DEFAULT_KERNEL := false
+TW_USE_SYSTEM_KERNEL := true
+
+# Для MTK
+TW_HAS_EDL_MODE := true
+BOARD_SUPPRESS_SECURE_ERASE := true
 
 # НЕТ system-as-root
 TW_NO_SYSTEM_ROOT := true
-
-# Опционально, для ясности
-TW_USE_NEW_ROOT := true
-TW_NO_BIND_SYSTEM := false
 
 # Proper compression (gzip)
 BOARD_RAMDISK_COMPRESSOR := gzip
