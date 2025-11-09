@@ -114,6 +114,12 @@ TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true 
 TW_SUPPORT_INPUT_1_2_HAPTICS := true
 
+# НЕТ system-as-root
+TW_NO_SYSTEM_ROOT := true
+
+# Опционально, для ясности
+TW_USE_NEW_ROOT := false
+
 # Proper compression (gzip)
 BOARD_RAMDISK_COMPRESSOR := gzip
 BOARD_RAMDISK_COMPRESSOR_ARGS := -9
