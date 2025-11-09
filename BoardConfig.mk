@@ -117,7 +117,8 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_NO_SYSTEM_ROOT := true
 
 # Опционально, для ясности
-TW_USE_NEW_ROOT := false
+TW_USE_NEW_ROOT := true
+TW_NO_BIND_SYSTEM := false
 
 # Proper compression (gzip)
 BOARD_RAMDISK_COMPRESSOR := gzip
