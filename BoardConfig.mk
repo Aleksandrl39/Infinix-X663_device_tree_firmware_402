@@ -117,7 +117,6 @@ TW_EXCLUDE_DEFAULT_KERNEL := false
 TW_USE_SYSTEM_KERNEL := true
 
 # Для MTK
-TW_HAS_EDL_MODE := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # НЕТ system-as-root
