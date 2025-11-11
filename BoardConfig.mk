@@ -15,13 +15,25 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
-	system \
-	product \
-	system_ext \
-	vendor \
-	vbmeta_system \
-	vbmeta_vendor \
-	boot
+	boot \
+    dtbo \
+    gz \
+    lk \
+    logo \
+    md1img \
+    preloader \
+    product \
+    scp \
+    spmfw \
+    sspm \
+    system \
+    system_ext \
+    tee \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor \
+    vendor \
+    vendor_boot
 BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
