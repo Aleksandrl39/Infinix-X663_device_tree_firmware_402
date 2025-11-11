@@ -117,6 +117,24 @@ PRODUCT_PLATFORM := mt6768
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_NO_RECOVERY := true
+TW_HAS_NO_RECOVERY_PARTITION := true
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+
+# Recovery modules
+TARGET_RECOVERY_DEVICE_MODULES += \
+    libkeymaster4 \
+    libpuresoftkeymasterdevice
+
+RECOVERY_LIBRARY_SOURCE_FILES += \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+
+# Hardware
+BOARD_USES_MTK_HARDWARE := true
+
+# Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2021-08-01
@@ -146,6 +164,7 @@ PLATFORM_VERSION := 16.1.0
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
+TW_DEVICE_VERSION := X663-MT6768
 TW_EXTRA_LANGUAGES := false
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
@@ -154,8 +173,6 @@ TW_INCLUDE_REPACKTOOLS := true
 TW_MAX_BRIGHTNESS := 255
 TW_EXCLUDE_TWRPAPP := true
 TW_EXCLUDE_NANO := true
-FOX_USE_TAR_BINARY := false
-FOX_USE_XZ_UTILS := false
 
 # Proper compression (gzip)
 BOARD_RAMDISK_COMPRESSOR := gzip
