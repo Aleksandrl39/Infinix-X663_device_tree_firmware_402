@@ -14,27 +14,6 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # A/B
 AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS += \
-	boot \
-    dtbo \
-    gz \
-    lk \
-    logo \
-    md1img \
-    preloader \
-    product \
-    scp \
-    spmfw \
-    sspm \
-    system \
-    system_ext \
-    tee \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor \
-    vendor \
-    vendor_boot
-BOARD_USES_RECOVERY_AS_BOOT := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -68,16 +47,14 @@ BOARD_KERNEL_TAGS_OFFSET := 0x07808000
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
-BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_IMAGE_NAME := kernel
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 TARGET_KERNEL_CONFIG := Infinix_X663_defconfig
 TARGET_KERNEL_SOURCE := kernel/infinix/Infinix_X663
 
 # Kernel - prebuilt
-TARGET_FORCE_PREBUILT_KERNEL := true
-ifeq ($(TARGET_FORCE_PREBUILT_KERNEL),true)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 BOARD_INCLUDE_DTB_IN_BOOTIMG := 
 endif
@@ -101,7 +78,6 @@ BOARD_INFINIX_DYNAMIC_PARTITIONS_SIZE := 9122611200
 
 # System as root
 BOARD_SUPPRESS_SECURE_ERASE := true
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 
 # Workaround for copying error vendor files to recovery ramdisk
 TARGET_COPY_OUT_PRODUCT := product
@@ -117,6 +93,7 @@ TW_USE_FSCRYPT_POLICY := 2
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 BOARD_ROOT_EXTRA_FOLDERS += metadata
+BOARD_ROOT_EXTRA_FOLDERS += tranfs
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6768
